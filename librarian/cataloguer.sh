@@ -8,12 +8,19 @@
 #   librarian/cataloguer.sh
 #
 # Author: Joe Lopes <lopes.id>
-# Date..: 2024-01-19
+# Date..: 2024-01-22
 ##
+
 
 find ./library \
   -type f \
   -name "*.ipynb" \
-  -exec \
-    mv -v {} $(echo {} | tr '[:upper:]' '[:lower:]' | tr '_' '-') \
-  \;
+  -exec sh -c '\
+    for f do
+      mv -v $f $(\
+       echo $f |\
+       tr '[:upper:]' '[:lower:]' |\
+       sed 's/_/-/g'\
+      )
+    done \
+  ' {} +
