@@ -15,8 +15,8 @@ Description
 ...
 ```
 
-## Sanitization
-Before commiting, it's highly recommeded that you run the `redactor.sh` script to remove the outputs from all notebooks.
+## Adding Notebooks
+Simply copy the `.ipynb` files to `notebooks/library`.  It's highly recommended to run the `cataloguer.sh` and `redactor.sh` scripts to assure that the file names are standardized and the outputs are removed (to avoid data leak).
 
 ## License
 Distributed under the MIT License.  See `LICENSE` for more information.
