@@ -12,15 +12,8 @@
 ##
 
 
-find ./library \
-  -type f \
-  -name "*.ipynb" \
-  -exec sh -c '\
-    for f do
-      mv -v $f $(\
-       echo $f |\
-       tr '[:upper:]' '[:lower:]' |\
-       sed 's/_/-/g'\
-      )
-    done \
-  ' {} +
+find ./library -type f -name "*.ipynb" | while read f
+do
+  new_name=$(echo "$f" | tr '[:upper:]' '[:lower:]' | sed -e 's/[ _]/-/g')
+  mv -v "$f" "$new_name"
+done
