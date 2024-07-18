@@ -7,16 +7,13 @@ This repository is a collection of useful [Python notebooks](https://jupyter.org
 # Notebook Name
 Description
 
----
-## NB Section
-[Optional] Description
-
-`code`
-...
+... (code, markdown, etc.)
 ```
 
 ## Adding Notebooks
-Simply copy the `.ipynb` files to `notebooks/library`.  It's highly recommended to run the `cataloguer.sh` and `redactor.sh` scripts to assure that the file names are standardized and the outputs are removed (to avoid data leak).
+1. Copy the `.ipynb` files to `notebooks/library`
+2. Run the `cataloguer.sh` script to normalize the file names
+3. Run the `redactor.sh` script to remove outputs and avoid data leakage
 
 ## License
 Distributed under the MIT License.  See `LICENSE` for more information.
